@@ -3,14 +3,29 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./Button.module.scss";
 
-function Button({ primary, label, backgroundColor, onClick, disabled, size, customIcon }) {
+function Button({
+  primary,
+  secondary,
+  label,
+  backgroundColor,
+  onClick,
+  disabled,
+  size,
+  customIcon,
+}) {
   const style = {
     backgroundColor: primary ? backgroundColor : "transparent",
+    color: secondary ? "#0678F7" : primary ? "#fff" : "#000",
+    border: secondary ? "1px solid #0678F7" : "none",
   };
 
   // Get the class name for the size based on the size prop
   const sizeClassName =
-    size === "large" ? styles["btn-lg"] : size === "small" ? styles["btn-sm"] : "";
+    size === "large"
+      ? styles["btn-lg"]
+      : size === "small"
+      ? styles["btn-sm"]
+      : "";
 
   return (
     <button
@@ -38,6 +53,7 @@ function Button({ primary, label, backgroundColor, onClick, disabled, size, cust
 
 Button.propTypes = {
   primary: PropTypes.bool,
+  secondary: PropTypes.bool,
   label: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string,
   onClick: PropTypes.func,

@@ -7,6 +7,7 @@ export default {
   component: Button,
   argTypes: {
     primary: { control: "boolean" },
+    secondary: { control: "boolean" },
     label: { control: "text" },
     backgroundColor: { control: "color" },
     onClick: { action: "clicked" },
@@ -17,7 +18,7 @@ export default {
         options: ["small", "medium", "large"],
       },
     },
-    customIcon: { control: "boolean" }
+    customIcon: { control: "boolean" },
   },
 };
 
@@ -59,5 +60,14 @@ WithCustomIcon.args = {
   primary: true,
   label: "Button Text",
   backgroundColor: "#007bff",
-  customIcon: true, // Set the customIcon prop to true to show the icon
+  customIcon: true,
+};
+
+export const SecondaryButton = Template.bind({});
+SecondaryButton.args = {
+  primary: false,
+  secondary: true,
+  label: "Button",
+  backgroundColor: "#ffffff",
+  customIcon: false,
 };
