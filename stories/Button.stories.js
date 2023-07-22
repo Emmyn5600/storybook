@@ -11,8 +11,14 @@ export default {
     backgroundColor: { control: "color" },
     onClick: { action: "clicked" },
     disabled: { control: "boolean" },
+    size: {
+      control: {
+        type: "select",
+        options: ["small", "medium", "large"],
+      },
+    },
   },
-} 
+};
 
 const Template = (args) => <Button {...args} />;
 
@@ -29,4 +35,12 @@ Disabled.args = {
   label: "Disabled",
   backgroundColor: "#007bff",
   disabled: true,
+};
+
+export const LargeButton = Template.bind({});
+LargeButton.args = {
+  primary: true,
+  label: "Button",
+  backgroundColor: "#007bff",
+  size: "large",
 };
