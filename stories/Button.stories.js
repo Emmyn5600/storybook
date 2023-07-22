@@ -44,3 +44,11 @@ LargeButton.args = {
   backgroundColor: "#007bff",
   size: "large",
 };
+
+export const SmallButton = Template.bind({});
+SmallButton.args = {
+  primary: true,
+  label: "Button",
+  backgroundColor: "#007bff",
+  size: "small",
+};
