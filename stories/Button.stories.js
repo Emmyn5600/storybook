@@ -1,44 +1,23 @@
-import Button from "../src/components/Button";
+// Button.stories.js
+import React from "react";
+import Button from "../src/components/Button/Button";
 
 export default {
-  title: "Components/Button",
-  components: Button,
-  argTypes: { handleClick: { action: "handleClick" } },
-};
+  title: "Button",
+  component: Button,
+  argTypes: {
+    primary: { control: "boolean" },
+    label: { control: "text" },
+    backgroundColor: { control: "color" },
+    onClick: { action: "clicked" },
+  },
+} 
 
 const Template = (args) => <Button {...args} />;
 
-export const Red = Template.bind({});
-Red.args = {
-  backgroundColor: "red",
-  label: "Press me",
-  size: "md",
-};
-
-export const Green = Template.bind({});
-Green.args = {
-  backgroundColor: "green",
-  label: "Press me",
-  size: "md",
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  backgroundColor: "red",
-  label: "Press me",
-  size: "sm",
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  backgroundColor: "red",
-  label: "Press me",
-  size: "lg",
-};
-
-export const LongLabel = Template.bind({});
-LongLabel.args = {
-  backgroundColor: "red",
-  label: "Press me Press me Press me Press me",
-  size: "md",
+export const Primary = Template.bind({});
+Primary.args = {
+  primary: true,
+  label: "Button",
+  backgroundColor: "#007bff",
 };
