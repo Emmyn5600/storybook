@@ -10,6 +10,7 @@ export default {
     label: { control: "text" },
     backgroundColor: { control: "color" },
     onClick: { action: "clicked" },
+    disabled: { control: "boolean" },
   },
 } 
 
@@ -20,4 +21,12 @@ Primary.args = {
   primary: true,
   label: "Button",
   backgroundColor: "#007bff",
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  primary: true,
+  label: "Disabled",
+  backgroundColor: "#007bff",
+  disabled: true,
 };
