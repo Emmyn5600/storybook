@@ -17,6 +17,7 @@ export default {
         options: ["small", "medium", "large"],
       },
     },
+    customIcon: { control: "boolean" }
   },
 };
 
@@ -51,4 +52,12 @@ SmallButton.args = {
   label: "Button",
   backgroundColor: "#007bff",
   size: "small",
+};
+
+export const WithCustomIcon = Template.bind({});
+WithCustomIcon.args = {
+  primary: true,
+  label: "Button Text",
+  backgroundColor: "#007bff",
+  customIcon: true, // Set the customIcon prop to true to show the icon
 };
