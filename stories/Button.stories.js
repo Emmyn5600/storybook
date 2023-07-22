@@ -3,11 +3,12 @@ import React from "react";
 import Button from "../src/components/Button/Button";
 
 export default {
-  title: "Button",
+  title: "Components/Button",
   component: Button,
   argTypes: {
     primary: { control: "boolean" },
     secondary: { control: "boolean" },
+    tertiary: { control: "boolean" },
     label: { control: "text" },
     backgroundColor: { control: "color" },
     onClick: { action: "clicked" },
@@ -63,11 +64,20 @@ WithCustomIcon.args = {
   customIcon: true,
 };
 
-export const SecondaryButton = Template.bind({});
-SecondaryButton.args = {
+export const Secondary = Template.bind({});
+Secondary.args = {
   primary: false,
   secondary: true,
   label: "Button",
   backgroundColor: "#ffffff",
   customIcon: false,
+};
+
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+  primary: false,
+  secondary: false,
+  tertiary: true,
+  label: "Button",
+  backgroundColor: "#f9f9fb", // Background color for the tertiary button
 };

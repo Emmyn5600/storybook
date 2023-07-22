@@ -6,6 +6,7 @@ import styles from "./Button.module.scss";
 function Button({
   primary,
   secondary,
+  tertiary,
   label,
   backgroundColor,
   onClick,
@@ -14,8 +15,18 @@ function Button({
   customIcon,
 }) {
   const style = {
-    backgroundColor: primary ? backgroundColor : "transparent",
-    color: secondary ? "#0678F7" : primary ? "#fff" : "#000",
+    backgroundColor: primary
+      ? backgroundColor
+      : tertiary
+      ? "#f9f9fb"
+      : "transparent",
+    color: tertiary
+      ? "#000"
+      : secondary
+      ? "#0678F7"
+      : primary
+      ? "#fff"
+      : "#000",
     border: secondary ? "1px solid #0678F7" : "none",
   };
 
@@ -54,6 +65,7 @@ function Button({
 Button.propTypes = {
   primary: PropTypes.bool,
   secondary: PropTypes.bool,
+  tertiary: PropTypes.bool,
   label: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string,
   onClick: PropTypes.func,
